@@ -201,7 +201,7 @@ export default function TechnologyStackSection() {
                     {[
                         { label: 'Technologies Mastered', value: '50+', icon: Code2 },
                         { label: 'Years of Experience', value: '10+', icon: Shield },
-                        { label: 'Projects Delivered', value: '500+', icon: Zap },
+                        { label: 'Projects Delivered', value: '50+', icon: Zap },
                         { label: 'Happy Clients', value: '100+', icon: Globe }
                     ].map((stat, index) => {
                         const IconComponent = stat.icon

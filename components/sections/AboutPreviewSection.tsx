@@ -43,7 +43,7 @@ const teamMembers = [
         name: 'Sneha Gupta',
         role: 'AI/ML Specialist',
         expertise: 'Machine Learning, Data Science',
-        experience: '5+ years',
+        experience: '15+ years',
         avatar: 'SG',
         gradient: 'from-orange-500 to-red-500',
         skills: ['Python', 'TensorFlow', 'OpenAI', 'Data Science']
@@ -160,7 +160,7 @@ export default function AboutPreviewSection() {
                     {[
                         { icon: Calendar, value: '3+', label: 'Years of Excellence', color: 'text-blue-600' },
                         { icon: Users, value: '10+', label: 'Expert Team Members', color: 'text-green-600' },
-                        { icon: Award, value: '500+', label: 'Projects Delivered', color: 'text-purple-600' },
+                        { icon: Award, value: '50+', label: 'Projects Delivered', color: 'text-purple-600' },
                         { icon: Star, value: '4.9', label: 'Client Satisfaction', color: 'text-yellow-600' }
                     ].map((stat, index) => {
                         const IconComponent = stat.icon

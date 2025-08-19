@@ -22,7 +22,7 @@ const teamMembers = [
     gradient: 'from-blue-500 to-cyan-500',
     description: 'Visionary leader with expertise in full-stack development and business strategy. Drives innovation and ensures client success through cutting-edge technology solutions.',
     skills: ['Strategic Planning', 'Full-Stack Development', 'Team Leadership', 'Client Relations', 'Technology Architecture'],
-    achievements: ['Led 500+ successful projects', 'Built scalable tech solutions', 'Established AJPR World vision'],
+    achievements: ['Led 50+ successful projects', 'Built scalable tech solutions', 'Established AJPR World vision'],
     email: 'aman@ajprworld.com',
     phone: '+91 82737 92119'
   },
@@ -53,17 +53,17 @@ const teamMembers = [
     phone: '+91 98765 43212'
   },
   {
-    name: 'Treveni Chandra Nainwal',
+    name: ' Triveni Chandra Nainwal',
     role: 'Account & Finance Manager',
     specialization: 'Financial Management & Compliance',
-    experience: '5+ years',
+    experience: '15+ years',
     avatar: 'TCN',
     gradient: 'from-orange-500 to-red-500',
     description: 'Expert financial professional ensuring fiscal responsibility and regulatory compliance. Manages all financial operations with precision and strategic insight.',
     skills: ['Financial Planning', 'Tax Compliance', 'Budget Management', 'Regulatory Affairs', 'Risk Assessment'],
     achievements: ['Streamlined financial processes', 'Ensured 100% compliance', 'Optimized operational costs'],
-    email: 'treveni@ajprworld.com',
-    phone: '+91 98765 43213'
+    email: 'triveni.nainwal@gmail.com',
+    phone: '+91 9811139030'
   }
 ]
 
@@ -114,7 +114,7 @@ const milestones = [
     title: 'Major Milestones',
     description: 'Achieved significant growth in client base and service delivery excellence',
     icon: Trophy,
-    stats: '500+ projects completed'
+    stats: '50+ projects completed'
   },
   {
     year: '2025',
@@ -180,7 +180,7 @@ export default function AboutPage() {
             {[
               { icon: Calendar, value: '3+', label: 'Years of Excellence', color: 'text-blue-600', description: 'Serving clients since 2022' },
               { icon: Users, value: '4', label: 'Expert Team Members', color: 'text-green-600', description: 'Dedicated professionals' },
-              { icon: Award, value: '500+', label: 'Projects Delivered', color: 'text-purple-600', description: 'Across all service categories' },
+              { icon: Award, value: '50+', label: 'Projects Delivered', color: 'text-purple-600', description: 'Across all service categories' },
               { icon: Star, value: '100%', label: 'Client Satisfaction', color: 'text-yellow-600', description: 'Perfect retention rate' }
             ].map((stat, index) => {
               const IconComponent = stat.icon

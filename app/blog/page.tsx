@@ -52,7 +52,7 @@ const blogPosts = [
         title: 'GST Compliance Made Simple: A Business Owner\'s Guide',
         excerpt: 'Navigate the complexities of GST filing, returns, and compliance with our comprehensive guide for business owners.',
         content: 'GST compliance can be overwhelming for business owners. Here\'s how to simplify the process...',
-        author: 'Treveni Chandra Nainwal',
+        author: ' Triveni Chandra Nainwal',
         authorRole: 'Account & Finance Manager',
         authorAvatar: 'TCN',
         publishDate: '2025-08-08',

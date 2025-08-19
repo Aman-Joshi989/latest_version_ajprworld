@@ -225,7 +225,7 @@ export default function HeroSection() {
                             <div className="w-1 h-6 bg-slate-300 dark:bg-slate-700"></div>
                             <div className="flex items-center group cursor-pointer">
                                 <Users className="w-6 h-6 mr-3 text-blue-500 group-hover:animate-bounce-gentle" />
-                                <span className="text-lg font-medium group-hover:text-purple-600 transition-colors duration-300">500+ Happy Clients</span>
+                                <span className="text-lg font-medium group-hover:text-purple-600 transition-colors duration-300">5  0+ Happy Clients</span>
                             </div>
                             <div className="w-1 h-6 bg-slate-300 dark:bg-slate-700"></div>
                             <div className="flex items-center group cursor-pointer">

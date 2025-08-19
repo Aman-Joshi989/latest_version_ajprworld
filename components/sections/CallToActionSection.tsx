@@ -214,7 +214,7 @@ export default function CallToActionSection() {
                 <div className={`mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 transition-all duration-1000 ${isVisible ? 'animate-fade-up animation-delay-800' : 'opacity-0'}`}>
                     {[
                         { icon: Award, label: '100% Success Rate', description: 'In project delivery' },
-                        { icon: Users, label: '500+ Clients', description: 'Trust our services' },
+                        { icon: Users, label: '50+ Clients', description: 'Trust our services' },
                         { icon: Globe, label: '7 Service Areas', description: 'Complete coverage' },
                         { icon: Zap, label: '24/7 Support', description: 'Always available' }
                     ].map((indicator, index) => {
