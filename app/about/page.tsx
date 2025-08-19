@@ -17,7 +17,7 @@ const teamMembers = [
         name: 'Aman Joshi',
         role: 'Founder & CEO',
         specialization: 'Technology Leadership & Strategy',
-        experience: '8+ years',
+        experience: '5+ years',
         avatar: 'AJ',
         gradient: 'from-blue-500 to-cyan-500',
         description: 'Visionary leader with expertise in full-stack development and business strategy. Drives innovation and ensures client success through cutting-edge technology solutions.',
@@ -30,7 +30,7 @@ const teamMembers = [
         name: 'Priyank Rakholia',
         role: 'Founder & Business Development Manager',
         specialization: 'Business Growth & Client Relations',
-        experience: '7+ years',
+        experience: '4+ years',
         avatar: 'PR',
         gradient: 'from-purple-500 to-pink-500',
         description: 'Dynamic business strategist focused on expanding market reach and building lasting client relationships. Expert in identifying growth opportunities and executing successful business plans.',
@@ -96,21 +96,21 @@ const companyValues = [
 
 const milestones = [
     {
-        year: '2022',
+        year: '2025',
         title: 'Company Founded',
         description: 'AJPR World established with a vision to bridge technology and business success',
         icon: Building,
         stats: 'Founded with 2 co-founders'
     },
     {
-        year: '2023',
+        year: '2025',
         title: 'Service Expansion',
         description: 'Expanded from tech services to comprehensive business solutions including legal and financial services',
         icon: Globe,
         stats: '7 service categories launched'
     },
     {
-        year: '2024',
+        year: '2025',
         title: 'Major Milestones',
         description: 'Achieved significant growth in client base and service delivery excellence',
         icon: Trophy,
@@ -178,7 +178,7 @@ export default function AboutPage() {
                 <div className="container mx-auto px-4">
                     <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 transition-all duration-1000 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
                         {[
-                            { icon: Calendar, value: '3+', label: 'Years of Excellence', color: 'text-blue-600', description: 'Serving clients since 2022' },
+                            { icon: Calendar, value: '3+', label: 'Years of Excellence', color: 'text-blue-600', description: 'Serving clients since 2025' },
                             { icon: Users, value: '4', label: 'Expert Team Members', color: 'text-green-600', description: 'Dedicated professionals' },
                             { icon: Award, value: '50+', label: 'Projects Delivered', color: 'text-purple-600', description: 'Across all service categories' },
                             { icon: Star, value: '100%', label: 'Client Satisfaction', color: 'text-yellow-600', description: 'Perfect retention rate' }

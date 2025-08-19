@@ -16,7 +16,7 @@ const teamMembers = [
         name: 'Aman Joshi',
         role: 'Founder & Lead Developer',
         expertise: 'Full-Stack Development, System Architecture',
-        experience: '8+ years',
+        experience: '5+ years',
         avatar: 'AJ',
         gradient: 'from-blue-500 to-cyan-500',
         skills: ['Next.js', 'Node.js', 'AWS', 'TypeScript']
@@ -34,7 +34,7 @@ const teamMembers = [
         name: 'Rohit Kumar',
         role: 'DevOps Engineer',
         expertise: 'Cloud Infrastructure, Automation',
-        experience: '7+ years',
+        experience: '4+ years',
         avatar: 'RK',
         gradient: 'from-green-500 to-emerald-500',
         skills: ['Docker', 'Kubernetes', 'AWS', 'Terraform']
@@ -79,19 +79,19 @@ const companyValues = [
 
 const milestones = [
     {
-        year: '2022',
+        year: '2025',
         title: 'Company Founded',
         description: 'Started with a vision to bridge the gap between innovation and business success',
         icon: Building
     },
     {
-        year: '2023',
+        year: '2025',
         title: 'First 50 Projects',
         description: 'Achieved our first major milestone by successfully delivering 50+ projects',
         icon: Target
     },
     {
-        year: '2024',
+        year: '2025',
         title: 'Global Recognition',
         description: 'Expanded internationally and received industry recognition for innovation',
         icon: Globe

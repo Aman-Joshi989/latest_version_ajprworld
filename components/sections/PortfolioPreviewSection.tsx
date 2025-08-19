@@ -23,7 +23,7 @@ const portfolioProjects = [
         gradient: 'from-green-500 to-emerald-600',
         icon: ShoppingCart,
         status: 'Live',
-        year: '2024',
+        year: '2025',
         client: 'EcoTech Solutions',
         duration: '4 months'
     },
@@ -39,7 +39,7 @@ const portfolioProjects = [
         gradient: 'from-blue-500 to-cyan-600',
         icon: Heart,
         status: 'Live',
-        year: '2024',
+        year: '2025',
         client: 'MediCore Systems',
         duration: '6 months'
     },
@@ -55,7 +55,7 @@ const portfolioProjects = [
         gradient: 'from-purple-500 to-pink-600',
         icon: TrendingUp,
         status: 'Live',
-        year: '2024',
+        year: '2025',
         client: 'InvestPro Capital',
         duration: '3 months'
     },
@@ -71,7 +71,7 @@ const portfolioProjects = [
         gradient: 'from-orange-500 to-red-600',
         icon: Zap,
         status: 'Live',
-        year: '2024',
+        year: '2025',
         client: 'EduFuture Inc',
         duration: '5 months'
     },
@@ -87,7 +87,7 @@ const portfolioProjects = [
         gradient: 'from-indigo-500 to-blue-600',
         icon: Globe,
         status: 'Live',
-        year: '2024',
+        year: '2025',
         client: 'SmartCity Corp',
         duration: '8 months'
     },
@@ -103,7 +103,7 @@ const portfolioProjects = [
         gradient: 'from-pink-500 to-rose-600',
         icon: Heart,
         status: 'Live',
-        year: '2024',
+        year: '2025',
         client: 'ChangeMakers NGO',
         duration: '4 months'
     }
