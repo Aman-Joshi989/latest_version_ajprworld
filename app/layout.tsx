@@ -8,17 +8,12 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'AJPR World - Your Trusted Technology Partner',
-  description: 'Beyond vendors: Your digital success deserves a partner. Professional web development, IT solutions, and digital transformation services in Haldwani, Uttarakhand.',
-  keywords: 'web development, IT solutions, digital marketing, technology partner, Haldwani, Uttarakhand, Next.js, TypeScript',
-  authors: [{ name: 'AJPR World' }],
+  title: 'AJPR World - Complete Business Solutions | Legal, Tech & Financial Services',
+  description: 'AJPR World provides comprehensive business solutions including web development, legal services, GST returns, company registration, and financial consulting. Your one-stop partner for business success.',
+  keywords: 'AJPR World, business solutions, web development, legal services, GST returns, company registration, financial consulting, Ballabgarh, Faridabad',
+  authors: [{ name: 'AJPR World Team' }],
   creator: 'AJPR World',
   publisher: 'AJPR World',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
 }
 
 export default function RootLayout({

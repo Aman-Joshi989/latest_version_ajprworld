@@ -37,11 +37,11 @@ export default function CTASection() {
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8 border-t border-blue-500/30">
                                 <div className="flex items-center space-x-3 text-blue-100">
                                     <Mail className="h-5 w-5" />
-                                    <span>info@ajprworld.com</span>
+                                    <span>ajprworld@gmail.com</span>
                                 </div>
                                 <div className="flex items-center space-x-3 text-blue-100">
                                     <Phone className="h-5 w-5" />
-                                    <span>+91 98765 43210</span>
+                                    <span>+91 82737 92119</span>
                                 </div>
                             </div>
                         </div>
