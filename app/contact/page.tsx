@@ -47,7 +47,7 @@ export default function ContactPage() {
                     <div className="space-y-6">
                         {[
                             { icon: Phone, title: 'Call Us', value: '+91 82737 92119', link: 'tel:+919876543210' },
-                            { icon: Mail, title: 'Email Us', value: 'ajprworld@gmail.com', link: 'mailto:ajprworld@gmail.com' },
+                            { icon: Mail, title: 'Email Us', value: 'contact@ajprworld.com', link: 'mailto:contact@ajprworld.com' },
                             { icon: MessageCircle, title: 'WhatsApp', value: 'Chat on WhatsApp', link: 'https://wa.me/919876543210' },
                             { icon: MapPin, title: 'Visit Us', value: 'Sector 59-60, Ballabgarh', link: '#' }
                         ].map((c, i) => (

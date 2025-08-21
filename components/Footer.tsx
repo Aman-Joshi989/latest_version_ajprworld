@@ -58,8 +58,8 @@ export default function Footer() {
                             </div>
                             <div className="flex items-center text-blue-200">
                                 <Mail className="h-5 w-5 mr-3 flex-shrink-0 text-blue-400" />
-                                <a href="mailto:ajprworld@gmail.com" className="hover:text-white transition-colors">
-                                    ajprworld@gmail.com
+                                <a href="mailto:contact@ajprworld.com" className="hover:text-white transition-colors">
+                                    contact@ajprworld.com
                                 </a>
                             </div>
                             <div className="flex items-center text-blue-200">
@@ -124,16 +124,16 @@ export default function Footer() {
                             </Button>
                         </div>
                         <div className="flex space-x-4">
-                            <Link href="https://facebook.com/ajprworld" className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-300">
+                            <Link href="https://www.facebook.com/profile.php?id=61579291805273" className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-300">
                                 <Facebook className="h-5 w-5" />
                             </Link>
-                            <Link href="https://twitter.com/ajprworld" className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-300">
+                            <Link href="https://x.com/AjprWorld" className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-300">
                                 <Twitter className="h-5 w-5" />
                             </Link>
-                            <Link href="https://linkedin.com/company/ajprworld" className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-300">
+                            <Link href="https://www.linkedin.com/company/ajpr-world" className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-300">
                                 <Linkedin className="h-5 w-5" />
                             </Link>
-                            <Link href="https://instagram.com/ajprworld" className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-300">
+                            <Link href="https://www.instagram.com/ajprworld" className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-300">
                                 <Instagram className="h-5 w-5" />
                             </Link>
                         </div>
