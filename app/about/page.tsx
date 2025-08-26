@@ -357,16 +357,20 @@ export default function AboutPage() {
             {/* Company Timeline */}
             <section className="py-24 bg-slate-50 dark:bg-slate-900/50">
                 <div className="container mx-auto px-4">
-                    <div className={`text-center space-y-6 mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-up animation-delay-1000' : 'opacity-0'}`}>
+                    {/* Heading */}
+                    <div
+                        className={`text-center space-y-6 mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-up animation-delay-1000' : 'opacity-0'
+                            }`}
+                    >
                         <h2 className="text-4xl md:text-5xl font-bold">Our Journey</h2>
-                        <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+                        <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
                             From humble beginnings to industry recognition - here's our story of growth, innovation, and success.
                         </p>
                     </div>
 
-                    <div className="relative max-w-4xl mx-auto">
+                    <div className="relative max-w-5xl mx-auto">
                         {/* Timeline Line */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
+                        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full hidden md:block"></div>
 
                         {milestones.map((milestone, index) => {
                             const IconComponent = milestone.icon
@@ -374,26 +378,34 @@ export default function AboutPage() {
                             return (
                                 <div
                                     key={index}
-                                    className={`relative flex items-center mb-16 ${isEven ? 'flex-row' : 'flex-row-reverse'} ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
-                                    style={{ animationDelay: `${1.2 + (index * 0.2)}s` }}
+                                    className={`relative flex flex-col md:flex-row items-center mb-16 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'
+                                        } ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
+                                    style={{ animationDelay: `${1.2 + index * 0.2}s` }}
                                 >
                                     {/* Timeline Node */}
-                                    <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white z-10 shadow-2xl">
-                                        <IconComponent className="h-8 w-8" />
+                                    <div className="absolute md:static left-1/2 md:left-auto transform -translate-x-1/2 md:translate-x-0 mb-6 md:mb-0">
+                                        <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white z-10 shadow-2xl mx-auto md:mx-0">
+                                            <IconComponent className="h-6 w-6 md:h-8 md:w-8" />
+                                        </div>
                                     </div>
 
                                     {/* Content */}
-                                    <div className={`w-5/12 ${isEven ? 'pr-12 text-right' : 'pl-12 text-left'}`}>
-                                        <Card className="p-8 hover-lift bg-white dark:bg-slate-800 border-0 shadow-lg hover:shadow-xl">
+                                    <div
+                                        className={`w-full md:w-5/12 ${isEven ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'
+                                            }`}
+                                    >
+                                        <Card className="p-6 md:p-8 hover-lift bg-white dark:bg-slate-800 border-0 shadow-lg hover:shadow-xl">
                                             <CardContent className="p-0">
                                                 <Badge className="mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white">
                                                     {milestone.year}
                                                 </Badge>
-                                                <h4 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white">{milestone.title}</h4>
+                                                <h4 className="text-xl md:text-2xl font-bold mb-3 text-slate-900 dark:text-white">
+                                                    {milestone.title}
+                                                </h4>
                                                 <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
                                                     {milestone.description}
                                                 </p>
-                                                <div className="text-sm text-blue-600 dark:text-blue-400 font-semibold">
+                                                <div className="text-sm md:text-base text-blue-600 dark:text-blue-400 font-semibold">
                                                     {milestone.stats}
                                                 </div>
                                             </CardContent>
@@ -405,6 +417,7 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
+
 
             {/* CTA Section */}
             <section className="py-24 bg-gradient-to-r from-blue-600 to-purple-600 text-white">

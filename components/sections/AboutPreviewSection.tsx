@@ -281,40 +281,51 @@ export default function AboutPreviewSection() {
                 </div>
 
                 {/* Company Timeline */}
-                <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-up animation-delay-1000' : 'opacity-0'}`}>
+                <div
+                    className={`mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-up animation-delay-1000' : 'opacity-0'
+                        }`}
+                >
                     <div className="text-center mb-12">
                         <h3 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h3>
-                        <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+                        <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
                             From humble beginnings to industry recognition - here's our story of growth and innovation.
                         </p>
                     </div>
 
                     <div className="relative">
-                        {/* Timeline Line */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
+                        {/* Timeline Line (hidden on small screens to avoid overlap) */}
+                        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full hidden md:block"></div>
 
                         {milestones.map((milestone, index) => {
                             const IconComponent = milestone.icon
+                            const isEven = index % 2 === 0
                             return (
                                 <div
                                     key={index}
-                                    className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                                    className={`relative flex flex-col md:flex-row items-center mb-12 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'
                                         }`}
                                 >
                                     {/* Timeline Node */}
-                                    <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white z-10">
-                                        <IconComponent className="h-6 w-6" />
+                                    <div className="absolute md:static left-1/2 md:left-auto transform -translate-x-1/2 md:translate-x-0 mb-6 md:mb-0">
+                                        <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white z-10 mx-auto md:mx-0">
+                                            <IconComponent className="h-5 w-5 md:h-6 md:w-6" />
+                                        </div>
                                     </div>
 
                                     {/* Content */}
-                                    <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                                        <Card className="p-6 hover-lift bg-white dark:bg-slate-800 border-0 shadow-lg">
+                                    <div
+                                        className={`w-full md:w-5/12 ${isEven ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'
+                                            }`}
+                                    >
+                                        <Card className="p-4 md:p-6 hover-lift bg-white dark:bg-slate-800 border-0 shadow-lg">
                                             <CardContent className="p-0">
                                                 <Badge className="mb-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white">
                                                     {milestone.year}
                                                 </Badge>
-                                                <h4 className="text-xl font-bold mb-2">{milestone.title}</h4>
-                                                <p className="text-slate-600 dark:text-slate-300 text-sm">
+                                                <h4 className="text-lg md:text-xl font-bold mb-2">
+                                                    {milestone.title}
+                                                </h4>
+                                                <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed">
                                                     {milestone.description}
                                                 </p>
                                             </CardContent>
@@ -325,6 +336,7 @@ export default function AboutPreviewSection() {
                         })}
                     </div>
                 </div>
+
 
                 {/* CTA Section */}
                 <div className={`text-center transition-all duration-1000 ${isVisible ? 'animate-fade-up animation-delay-1200' : 'opacity-0'}`}>
