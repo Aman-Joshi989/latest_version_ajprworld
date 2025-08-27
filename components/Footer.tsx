@@ -1,11 +1,14 @@
-import Link from 'next/link'
-import Image from 'next/image'
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import {
     Mail, Phone, MapPin, Linkedin, Twitter, Instagram,
     Facebook, ArrowRight, Clock, Globe
-} from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 const services = [
     { name: 'Web Development', href: '/services/web-development' },
@@ -14,7 +17,7 @@ const services = [
     { name: 'Company Registration', href: '/services/business' },
     { name: 'HR & Payroll', href: '/services/hr-payroll' },
     { name: 'Digital Marketing', href: '/services/digital-marketing' },
-]
+];
 
 const quickLinks = [
     { name: 'About Us', href: '/about' },
@@ -23,9 +26,35 @@ const quickLinks = [
     { name: 'Blog', href: '/blog' },
     { name: 'Careers', href: '/careers' },
     { name: 'Privacy Policy', href: '/privacy' },
-]
+];
 
 export default function Footer() {
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    const handleSubscribe = async () => {
+        if (!email) return;
+
+        try {
+            const res = await fetch("/api/subscribe", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
+
+            if (res.ok) {
+                setMessage("✅ Subscribed successfully!");
+                setEmail("");
+            } else {
+                const data = await res.json();
+                setMessage("❌ " + (data.error || "Failed to subscribe"));
+            }
+        } catch (error) {
+            console.error(error);
+            setMessage("⚠️ Network error");
+        }
+    };
+
     return (
         <footer className="bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
             {/* Background Elements */}
@@ -36,11 +65,11 @@ export default function Footer() {
 
             <div className="container mx-auto px-4 py-16 relative z-10">
                 <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-                    {/* Company Info with Logo */}
+                    {/* Company Info */}
                     <div className="space-y-6">
                         <div className="flex items-center space-x-3">
                             <Image
-                                src="/logo/ajpr-logo-white.png" // You'll need a white version for dark backgrounds
+                                src="/logo/ajpr-logo-white.png"
                                 alt="AJPR World Private Limited"
                                 width={150}
                                 height={50}
@@ -116,12 +145,18 @@ export default function Footer() {
                         <div className="space-y-3">
                             <input
                                 type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Your email address"
                                 className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
                             />
-                            <Button className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600">
+                            <Button
+                                onClick={handleSubscribe}
+                                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+                            >
                                 Subscribe
                             </Button>
+                            {message && <p className="text-sm text-blue-200">{message}</p>}
                         </div>
                         <div className="flex space-x-4">
                             <Link href="https://www.facebook.com/profile.php?id=61579291805273" className="p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors duration-300">
@@ -162,5 +197,5 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
-    )
+    );
 }
