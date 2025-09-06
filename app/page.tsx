@@ -437,7 +437,7 @@ export default function AboutPage() {
                   Work With Our Team
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white hover:text-blue-600 hover-lift px-12 py-4 text-lg" asChild>
+              <Button size="lg" variant="outline" className="border-white/20 text-black hover:bg-white hover:text-blue-600 hover-lift px-12 py-4 text-lg" asChild>
                 <Link href="/services">
                   <ArrowRight className="mr-2 h-6 w-6" />
                   Explore Our Services
