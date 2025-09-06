@@ -23,7 +23,7 @@ const teamMembers = [
         description: 'Visionary leader with expertise in full-stack development and business strategy. Drives innovation and ensures client success through cutting-edge technology solutions.',
         skills: ['Strategic Planning', 'Full-Stack Development', 'Team Leadership', 'Client Relations', 'Technology Architecture'],
         achievements: ['Led 50+ successful projects', 'Built scalable tech solutions', 'Established AJPR World vision'],
-        email: 'aman@ajprworld.com',
+        email: 'amanjoshi0525@gmail.com',
         phone: '+91 82737 92119'
     },
     {
@@ -36,7 +36,7 @@ const teamMembers = [
         description: 'Dynamic business strategist focused on expanding market reach and building lasting client relationships. Expert in identifying growth opportunities and executing successful business plans.',
         skills: ['Business Development', 'Strategic Partnerships', 'Market Analysis', 'Client Acquisition', 'Revenue Growth'],
         achievements: ['Expanded client base by 300%', 'Established key partnerships', 'Drove business diversification'],
-        email: 'priyank@ajprworld.com',
+        email: 'priyankrakholia17@gmail.com',
         phone: '+91 98765 43211'
     },
     {
