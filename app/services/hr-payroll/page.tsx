@@ -41,7 +41,7 @@ export default function HRPayrollPage() {
     return (
         <section className="py-24 bg-white dark:bg-slate-900">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
+                {/* <div className="text-center mb-16">
                     <Badge className="mb-4 bg-gradient-to-r from-orange-100 to-red-100 text-orange-800">
                         <Users className="w-4 h-4 mr-2" />
                         HR & Payroll
@@ -51,7 +51,7 @@ export default function HRPayrollPage() {
                         Comprehensive HR and payroll solutions to manage your workforce efficiently
                         while ensuring complete compliance with labor laws.
                     </p>
-                </div>
+                </div> */}
 
                 {/* Features */}
                 <div className="grid md:grid-cols-3 gap-8 mb-16">

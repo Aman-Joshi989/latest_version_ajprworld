@@ -61,22 +61,22 @@ const allServiceCategories = {
             'Bank Loan Assistance'
         ]
     },
-    'HR & Payroll Management': {
-        icon: Users,
-        gradient: 'from-orange-500 to-red-500',
-        services: [
-            'Complete Payroll Processing',
-            'ESI & PF Registration',
-            'Monthly ESI & PF Returns (ECR)',
-            'HR Compliance Management',
-            'Employee Documentation',
-            'Appointment Letter Drafting',
-            'Attendance Management Systems',
-            'Performance Management Tools',
-            'Training & Development Programs',
-            'Exit Formalities & Clearance'
-        ]
-    },
+    // 'HR & Payroll Management': {
+    //     icon: Users,
+    //     gradient: 'from-orange-500 to-red-500',
+    //     services: [
+    //         'Complete Payroll Processing',
+    //         'ESI & PF Registration',
+    //         'Monthly ESI & PF Returns (ECR)',
+    //         'HR Compliance Management',
+    //         'Employee Documentation',
+    //         'Appointment Letter Drafting',
+    //         'Attendance Management Systems',
+    //         'Performance Management Tools',
+    //         'Training & Development Programs',
+    //         'Exit Formalities & Clearance'
+    //     ]
+    // },
     'Business Registration': {
         icon: Briefcase,
         gradient: 'from-indigo-500 to-purple-500',

@@ -15,7 +15,6 @@ const services = [
     { name: 'Legal Services', href: '/services/legal' },
     { name: 'GST & Tax Returns', href: '/services/financial' },
     { name: 'Company Registration', href: '/services/business' },
-    { name: 'HR & Payroll', href: '/services/hr-payroll' },
     { name: 'Digital Marketing', href: '/services/digital-marketing' },
 ];
 

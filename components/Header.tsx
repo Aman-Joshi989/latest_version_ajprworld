@@ -20,7 +20,6 @@ const navigation = [
             { name: 'Web Development', href: '/services/web-development', icon: Code2 },
             { name: 'Legal Services', href: '/services/legal', icon: Scale },
             { name: 'Financial Services', href: '/services/financial', icon: Calculator },
-            { name: 'HR & Payroll', href: '/services/hr-payroll', icon: Users },
             { name: 'Business Registration', href: '/services/business', icon: Building },
             { name: 'Digital Marketing', href: '/services/digital-marketing', icon: Phone },
         ]
