@@ -71,7 +71,7 @@ export default function PrivacyPage() {
                     <h2>9. Contact Us</h2>
                     <p>
                         If you have questions, concerns, or requests regarding this Privacy Policy, please reach out to us at:
-                        <a href="mailto:contact@ajprworld.com" className="text-blue-600 hover:underline"> contact@ajprworld.com</a>
+                        <a href="mailto:ajprworld@gmail.com" className="text-blue-600 hover:underline"> ajprworld@gmail.com</a>
                     </p>
 
                     <p className="text-sm text-gray-500 mt-8">Last updated: August 19, 2025</p>

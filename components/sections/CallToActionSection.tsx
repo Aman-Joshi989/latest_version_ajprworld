@@ -24,8 +24,8 @@ const contactMethods = [
         icon: Mail,
         title: 'Email Us',
         description: 'Send your requirements',
-        action: 'mailto:contact@ajprworld.com',
-        label: 'contact@ajprworld.com',
+        action: 'mailto:ajprworld@gmail.com',
+        label: 'ajprworld@gmail.com',
         gradient: 'from-blue-500 to-cyan-500'
     },
     {
