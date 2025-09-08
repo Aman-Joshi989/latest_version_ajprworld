@@ -3,11 +3,20 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+    Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger
+} from '@/components/ui/sheet'
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from '@/components/ui/accordion'
 import {
     Menu, ChevronDown, Code2, Scale, Calculator,
-    Users, Phone, Mail, Building
+    Phone, Building
 } from 'lucide-react'
 import { ModeToggle } from '@/components/mode-toggle'
 
@@ -31,9 +40,9 @@ const navigation = [
 ]
 
 export default function Header() {
-    const [isOpen, setIsOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+    const pathname = usePathname()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -43,18 +52,25 @@ export default function Header() {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
+    // helper to check if current route is active
+    const isActive = (href: string) => {
+        return pathname === href || pathname.startsWith(href + '/')
+    }
+
     return (
-        <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled
-            ? 'bg-white/95 dark:bg-gray-950/95 backdrop-blur-lg shadow-lg'
-            : 'bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm'
-            } border-b border-gray-200/50 dark:border-gray-800/50`}>
+        <header
+            className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled
+                ? 'bg-white/95 dark:bg-gray-950/95 backdrop-blur-lg shadow-lg'
+                : 'bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm'
+                } border-b border-gray-200/50 dark:border-gray-800/50`}
+        >
             <div className="container flex h-20 items-center justify-between">
+                {/* Logo */}
                 <Link href="/" className="flex items-center space-x-3 group">
-                    {/* Using your AJPR World logo */}
                     <div className="relative w-32 h-12 group-hover:scale-105 transition-transform duration-300">
                         <Image
-                            src="/logo/ajpr-logo.png" // You'll place your logo file here
-                            alt="AJPR World Private Limited"
+                            src="/logo/ajpr-logo.png"
+                            alt="AJPR World Logo"
                             fill
                             className="object-contain"
                             priority
@@ -73,7 +89,10 @@ export default function Header() {
                         >
                             <Link
                                 href={item.href}
-                                className="flex items-center text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium py-2"
+                                className={`flex items-center font-medium py-2 transition-colors ${isActive(item.href)
+                                    ? 'text-blue-600 dark:text-blue-400'
+                                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                                    }`}
                             >
                                 {item.name}
                                 {item.dropdown && <ChevronDown className="ml-1 h-4 w-4" />}
@@ -87,12 +106,13 @@ export default function Header() {
                                             <Link
                                                 key={subItem.name}
                                                 href={subItem.href}
-                                                className="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/20 transition-colors"
+                                                className={`flex items-center px-4 py-3 transition-colors ${isActive(subItem.href)
+                                                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/20'
+                                                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/20'
+                                                    }`}
                                             >
                                                 <IconComponent className="w-5 h-5 mr-3 text-blue-600" />
-                                                <div>
-                                                    <div className="font-medium">{subItem.name}</div>
-                                                </div>
+                                                <div className="font-medium">{subItem.name}</div>
                                             </Link>
                                         )
                                     })}
@@ -103,7 +123,10 @@ export default function Header() {
 
                     <div className="flex items-center space-x-4">
                         <ModeToggle />
-                        <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+                        <Button
+                            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                            asChild
+                        >
                             <Link href="/contact">Get Quote</Link>
                         </Button>
                     </div>
@@ -112,15 +135,15 @@ export default function Header() {
                 {/* Mobile Navigation */}
                 <div className="lg:hidden flex items-center space-x-2">
                     <ModeToggle />
-                    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                    <Sheet>
                         <SheetTrigger asChild>
                             <Button variant="outline" size="icon">
                                 <Menu className="h-5 w-5" />
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="right" className="w-80">
-                            <div className="flex flex-col space-y-6 mt-8">
-                                <div className="flex items-center space-x-2 pb-4 border-b">
+                        <SheetContent side="right" className="w-80 p-6 overflow-y-auto">
+                            <SheetHeader>
+                                <SheetTitle className="flex items-center space-x-2">
                                     <Image
                                         src="/logo/ajpr-logo.png"
                                         alt="AJPR World"
@@ -128,37 +151,61 @@ export default function Header() {
                                         height={40}
                                         className="object-contain"
                                     />
-                                </div>
-                                {navigation.map((item) => (
-                                    <div key={item.name}>
+                                </SheetTitle>
+                            </SheetHeader>
+
+                            {/* Mobile Nav with Accordion */}
+                            <div className="flex flex-col mt-8 space-y-4">
+                                {navigation.map((item) =>
+                                    item.dropdown ? (
+                                        <Accordion type="single" collapsible key={item.name} className="w-full">
+                                            <AccordionItem value={item.name}>
+                                                <AccordionTrigger
+                                                    className={`text-lg font-medium ${isActive(item.href)
+                                                        ? 'text-blue-600 dark:text-blue-400'
+                                                        : 'hover:text-blue-600'
+                                                        }`}
+                                                >
+                                                    {item.name}
+                                                </AccordionTrigger>
+                                                <AccordionContent>
+                                                    <div className="ml-2 space-y-2">
+                                                        {item.dropdown.map((subItem) => {
+                                                            const IconComponent = subItem.icon
+                                                            return (
+                                                                <Link
+                                                                    key={subItem.name}
+                                                                    href={subItem.href}
+                                                                    className={`flex items-center py-2 transition-colors ${isActive(subItem.href)
+                                                                        ? 'text-blue-600 dark:text-blue-400 font-medium'
+                                                                        : 'text-gray-600 dark:text-gray-400 hover:text-blue-600'
+                                                                        }`}
+                                                                >
+                                                                    <IconComponent className="w-4 h-4 mr-2 text-blue-500" />
+                                                                    {subItem.name}
+                                                                </Link>
+                                                            )
+                                                        })}
+                                                    </div>
+                                                </AccordionContent>
+                                            </AccordionItem>
+                                        </Accordion>
+                                    ) : (
                                         <Link
+                                            key={item.name}
                                             href={item.href}
-                                            onClick={() => setIsOpen(false)}
-                                            className="text-lg font-medium hover:text-blue-600 transition-colors block"
+                                            className={`text-lg font-medium transition-colors ${isActive(item.href)
+                                                ? 'text-blue-600 dark:text-blue-400'
+                                                : 'hover:text-blue-600'
+                                                }`}
                                         >
                                             {item.name}
                                         </Link>
-                                        {item.dropdown && (
-                                            <div className="ml-4 mt-2 space-y-2">
-                                                {item.dropdown.map((subItem) => {
-                                                    const IconComponent = subItem.icon
-                                                    return (
-                                                        <Link
-                                                            key={subItem.name}
-                                                            href={subItem.href}
-                                                            onClick={() => setIsOpen(false)}
-                                                            className="flex items-center text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors py-1"
-                                                        >
-                                                            <IconComponent className="w-4 h-4 mr-2" />
-                                                            {subItem.name}
-                                                        </Link>
-                                                    )
-                                                })}
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
-                                <Button className="mt-6 bg-gradient-to-r from-blue-600 to-purple-600" asChild>
+                                    )
+                                )}
+
+                                {/* CTA Button */}
+                                <Button className="mt-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg hover:shadow-xl transition-all" asChild>
                                     <Link href="/contact">Get Quote</Link>
                                 </Button>
                             </div>
