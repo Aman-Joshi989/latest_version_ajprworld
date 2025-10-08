@@ -15,7 +15,7 @@ import {
 const teamMembers = [
   {
     name: 'Aman Joshi',
-    role: 'Founder & CEO',
+    role: 'Co-Founder & CEO',
     specialization: 'Technology Leadership & Strategy',
     experience: '5+ years',
     avatar: 'AJ',
@@ -28,7 +28,7 @@ const teamMembers = [
   },
   {
     name: 'Priyank Rakholia',
-    role: 'Founder & Business Development Manager',
+    role: 'Co-Founder & Business Development Manager',
     specialization: 'Business Growth & Client Relations',
     experience: '4+ years',
     avatar: 'PR',
@@ -100,7 +100,7 @@ const milestones = [
     title: 'Company Founded',
     description: 'AJPR World established with a vision to bridge technology and business success',
     icon: Building,
-    stats: 'Founded with 2 co-founders'
+    stats: 'Founded with 2 co-Co-Founders'
   },
   {
     year: '2025',

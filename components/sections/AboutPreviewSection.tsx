@@ -14,7 +14,7 @@ import {
 const teamMembers = [
     {
         name: 'Aman Joshi',
-        role: 'Founder & Lead Developer',
+        role: 'Co-Founder & Lead Developer',
         expertise: 'Full-Stack Development, System Architecture',
         experience: '5+ years',
         avatar: 'AJ',
