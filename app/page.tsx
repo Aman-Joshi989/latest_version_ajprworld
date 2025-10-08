@@ -24,7 +24,7 @@ const teamMembers = [
     skills: ['Strategic Planning', 'Full-Stack Development', 'Team Leadership', 'Client Relations', 'Technology Architecture'],
     achievements: ['Led 50+ successful projects', 'Built scalable tech solutions', 'Established AJPR World vision'],
     email: 'amanjoshi0525@gmail.com',
-    phone: '+91 82737 92119'
+    phone: '+91 99972 05257'
   },
   {
     name: 'Priyank Rakholia',

@@ -64,7 +64,7 @@ export default function ContactPage() {
                     {/* Quick Contact Options */}
                     <div className="space-y-6">
                         {[
-                            { icon: Phone, title: "Call Us", value: "+91 82737 92119", link: "tel:+919811139030" },
+                            { icon: Phone, title: "Call Us", value: "+91 99972 05257", link: "tel:+919811139030" },
                             { icon: Mail, title: "Email Us", value: "ajprworld@gmail.com", link: "mailto:ajprworld@gmail.com" },
                             { icon: MessageCircle, title: "WhatsApp", value: "Chat on WhatsApp", link: "https://wa.me/919811139030" },
                             { icon: MapPin, title: "Visit Us", value: "Nainital, Uttarakhand", link: "#" }

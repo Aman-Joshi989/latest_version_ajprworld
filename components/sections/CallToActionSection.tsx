@@ -17,7 +17,7 @@ const contactMethods = [
         title: 'Call Us',
         description: 'Direct consultation available',
         action: 'tel:+919811139030',
-        label: '+91 82737 92119',
+        label: '+91 99972 05257',
         gradient: 'from-green-500 to-emerald-500'
     },
     {
