@@ -28,7 +28,7 @@ const teamMembers = [
     },
     {
         name: 'Priyank Rakholia',
-        role: 'Co-Founder & Business Development Manager',
+        role: 'Co-Founder & Business Development',
         specialization: 'Business Growth & Client Relations',
         experience: '4+ years',
         avatar: 'PR',
