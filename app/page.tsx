@@ -6,64 +6,57 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import {
-  Users, Target, Award, MapPin, Calendar, Building,
-  Lightbulb, Heart, Zap, Globe, Star, TrendingUp,
-  Code2, Palette, Cloud, ArrowRight, CheckCircle,
-  Phone, Mail, Linkedin, Twitter, BookOpen, Trophy
+  Users, Award, Calendar,
+  Lightbulb, Heart, Star,
+  ArrowRight, CheckCircle,
+  CreditCard, Info, Shield, XCircle
 } from 'lucide-react'
 
-const teamMembers = [
+const pricingPackages = [
   {
-    name: 'Aman Joshi',
-    role: 'Co-Founder & CEO',
-    specialization: 'Technology Leadership & Strategy',
-    experience: '5+ years',
-    avatar: 'AJ',
-    gradient: 'from-blue-500 to-cyan-500',
-    description: 'Visionary leader with expertise in full-stack development and business strategy. Drives innovation and ensures client success through cutting-edge technology solutions.',
-    skills: ['Strategic Planning', 'Full-Stack Development', 'Team Leadership', 'Client Relations', 'Technology Architecture'],
-    achievements: ['Led 50+ successful projects', 'Built scalable tech solutions', 'Established AJPR World vision'],
-    email: 'amanjoshi0525@gmail.com',
-    phone: '+91 99972 05257'
+    name: 'BASIC PACKAGE',
+    price: '₹11,000',
+    description: 'Static / Frontend Website',
+    features: [
+      '4-page Static Website',
+      'Modern Frontend Design',
+      'Mobile-responsive layout',
+      'WhatsApp button integration',
+      'Standard Contact form',
+      'Basic SEO setup',
+      '1 free correction'
+    ],
+    timeline: '12-15 working days'
   },
   {
-    name: 'Priyank Rakholia',
-    role: 'Co-Founder & Business Development',
-    specialization: 'Business Growth & Client Relations',
-    experience: '4+ years',
-    avatar: 'PR',
-    gradient: 'from-purple-500 to-pink-500',
-    description: 'Dynamic business strategist focused on expanding market reach and building lasting client relationships. Expert in identifying growth opportunities and executing successful business plans.',
-    skills: ['Business Development', 'Strategic Partnerships', 'Market Analysis', 'Client Acquisition', 'Revenue Growth'],
-    achievements: ['Expanded client base by 300%', 'Established key partnerships', 'Drove business diversification'],
-    email: 'priyankrakholia17@gmail.com',
-    phone: '+91 98765 43211'
+    name: 'STANDARD PACKAGE',
+    price: '₹15,000',
+    description: 'Full Stack (No Admin)',
+    features: [
+      'Dynamic Website Solution',
+      'Database Integration',
+      'API Development',
+      'Faster delivery',
+      'Priority support',
+      'No Admin Panel included',
+      '3 free corrections'
+    ],
+    timeline: '12-15 working days'
   },
   {
-    name: 'Jatin Vaishnav',
-    role: 'SDE-3 (Senior Software Engineer)',
-    specialization: 'Advanced Software Development',
-    experience: '6+ years',
-    avatar: 'JV',
-    gradient: 'from-green-500 to-emerald-500',
-    description: 'Senior software engineer with deep expertise in modern web technologies, system architecture, and performance optimization. Leads technical innovation and mentors development teams.',
-    skills: ['Next.js/React', 'System Architecture', 'Performance Optimization', 'Code Review', 'Technical Mentoring'],
-    achievements: ['Architected scalable solutions', 'Reduced system latency by 60%', 'Led technical migrations'],
-    email: 'jatin@ajprworld.com',
-    phone: '+91 98765 43212'
-  },
-  {
-    name: ' Triveni Chandra Nainwal',
-    role: 'Account & Finance Manager',
-    specialization: 'Financial Management & Compliance',
-    experience: '15+ years',
-    avatar: 'TCN',
-    gradient: 'from-orange-500 to-red-500',
-    description: 'Expert financial professional ensuring fiscal responsibility and regulatory compliance. Manages all financial operations with precision and strategic insight.',
-    skills: ['Financial Planning', 'Tax Compliance', 'Budget Management', 'Regulatory Affairs', 'Risk Assessment'],
-    achievements: ['Streamlined financial processes', 'Ensured 100% compliance', 'Optimized operational costs'],
-    email: 'triveni.nainwal@gmail.com',
-    phone: '+91 9811139030'
+    name: 'PREMIUM PACKAGE',
+    price: '₹25,000',
+    description: 'Full Stack + Admin Panel',
+    features: [
+      'Complete Full Stack Solution',
+      'Custom Admin Dashboard',
+      'Content Management System (CMS)',
+      'Advanced Database Management',
+      'User Authentication (if needed)',
+      'Monthly maintenance (1 month)',
+      'Priority WhatsApp support'
+    ],
+    timeline: '12-15 working days'
   }
 ]
 
@@ -94,39 +87,9 @@ const companyValues = [
   }
 ]
 
-const milestones = [
-  {
-    year: '2025',
-    title: 'Company Founded',
-    description: 'AJPR World established with a vision to bridge technology and business success',
-    icon: Building,
-    stats: 'Founded with 2 co-Co-Founders'
-  },
-  {
-    year: '2025',
-    title: 'Service Expansion',
-    description: 'Expanded from tech services to comprehensive business solutions including legal and financial services',
-    icon: Globe,
-    stats: '7 service categories launched'
-  },
-  {
-    year: '2025',
-    title: 'Major Milestones',
-    description: 'Achieved significant growth in client base and service delivery excellence',
-    icon: Trophy,
-    stats: '50+ projects completed'
-  },
-  {
-    year: '2025',
-    title: 'Industry Recognition',
-    description: 'Recognized as a leading multi-service provider with 100% client satisfaction rate',
-    icon: Star,
-    stats: '100% client retention rate'
-  }
-]
+
 
 export default function AboutPage() {
-  const [activeTeamMember, setActiveTeamMember] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -209,117 +172,149 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Pricing & Scope Section */}
       <section className="py-24 bg-slate-50 dark:bg-slate-900/50">
         <div className="container mx-auto px-4">
-          <div className={`text-center space-y-6 mb-20 transition-all duration-1000 ${isVisible ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
-            <h2 className="text-4xl md:text-5xl font-bold">Our Leadership Team</h2>
+          <div className={`text-center space-y-6 mb-20 transition-all duration-1000 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}>
+            <h2 className="text-4xl md:text-5xl font-bold">Scope of Work & Pricing</h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              Meet the experienced professionals who drive AJPR World's success and innovation across all service domains.
+              Transparent pricing and comprehensive service packages tailored to your business needs.
             </p>
           </div>
 
-          {/* Team Grid */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
-            {/* Team Members Grid */}
-            <div className={`grid grid-cols-2 gap-6 transition-all duration-1000 ${isVisible ? 'animate-fade-left animation-delay-400' : 'opacity-0'}`}>
-              {teamMembers.map((member, index) => (
-                <Card
-                  key={index}
-                  className={`group cursor-pointer hover-lift transition-all duration-300 ${activeTeamMember === index ? 'ring-2 ring-blue-500 shadow-2xl scale-105' : 'shadow-lg hover:shadow-xl'
-                    }`}
-                  onClick={() => setActiveTeamMember(index)}
-                >
-                  <CardContent className="p-6 text-center">
-                    <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r ${member.gradient} text-white flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                      {member.avatar}
+          {/* Common Scope */}
+          <div className={`mb-20 max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'animate-fade-up animation-delay-200' : 'opacity-0'}`}>
+            <Card className="border-l-4 border-l-blue-500 shadow-lg">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">Scope of Work (Common for All Packages)</h3>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="font-semibold text-lg mb-4 text-blue-600">Website Pages</h4>
+                    <ul className="space-y-3">
+                      {['Home', 'About Us', 'Services', 'Contact Us'].map((item, i) => (
+                        <li key={i} className="flex items-center text-slate-700 dark:text-slate-300">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-4 text-blue-600">Core Features</h4>
+                    <ul className="space-y-3">
+                      {[
+                        'Mobile & tablet responsive design',
+                        'Clean corporate UI (HR-focused)',
+                        'WhatsApp Call / Chat button',
+                        'Contact form with email notification',
+                        'SEO-friendly page structure'
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-center text-slate-700 dark:text-slate-300">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Pricing Packages */}
+          <div className="grid md:grid-cols-3 gap-8 mb-20">
+            {pricingPackages.map((pkg, index) => (
+              <Card key={index} className={`relative flex flex-col hover-lift border-t-4 ${index === 1 ? 'border-t-purple-500 shadow-2xl scale-105 z-10' : 'border-t-blue-500 shadow-lg'} transition-all duration-500 ${isVisible ? 'animate-fade-up' : 'opacity-0'}`} style={{ animationDelay: `${400 + index * 100}ms` }}>
+                {index === 1 && (
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Most Popular
+                  </div>
+                )}
+                <CardContent className="p-8 flex-1 flex flex-col">
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{pkg.name}</h3>
+                    <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                      {pkg.price}
                     </div>
-                    <h4 className="font-bold text-lg mb-2 text-slate-900 dark:text-white">{member.name}</h4>
-                    <p className="text-blue-600 dark:text-blue-400 text-sm font-semibold mb-2">{member.role}</p>
-                    <Badge variant="outline" className="text-xs">
-                      {member.experience}
-                    </Badge>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Active Member Details */}
-            <div className={`transition-all duration-1000 ${isVisible ? 'animate-fade-right animation-delay-600' : 'opacity-0'}`}>
-              <Card className="p-8 bg-gradient-to-br from-white to-blue-50 dark:from-slate-800 dark:to-blue-900 border-0 shadow-2xl">
-                <CardContent className="p-0">
-                  <div key={activeTeamMember} className="animate-scale-in">
-                    <div className="flex items-center space-x-4 mb-6">
-                      <div className={`w-24 h-24 rounded-full bg-gradient-to-r ${teamMembers[activeTeamMember].gradient} text-white flex items-center justify-center text-2xl font-bold shadow-lg`}>
-                        {teamMembers[activeTeamMember].avatar}
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{teamMembers[activeTeamMember].name}</h3>
-                        <p className="text-blue-600 dark:text-blue-400 font-semibold text-lg">{teamMembers[activeTeamMember].role}</p>
-                        <Badge className="mt-2 bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
-                          {teamMembers[activeTeamMember].experience}
-                        </Badge>
-                      </div>
+                    <div className="text-sm font-medium text-slate-600 dark:text-slate-400">
+                      {pkg.description}
                     </div>
-
-                    <div className="space-y-6">
-                      <div>
-                        <h4 className="font-semibold mb-3 text-slate-700 dark:text-slate-300 text-lg">Specialization:</h4>
-                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
-                          {teamMembers[activeTeamMember].specialization}
-                        </p>
-                      </div>
-
-                      <div>
-                        <h4 className="font-semibold mb-3 text-slate-700 dark:text-slate-300 text-lg">About:</h4>
-                        <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                          {teamMembers[activeTeamMember].description}
-                        </p>
-                      </div>
-
-                      <div>
-                        <h4 className="font-semibold mb-3 text-slate-700 dark:text-slate-300 text-lg">Core Skills:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {teamMembers[activeTeamMember].skills.map((skill, idx) => (
-                            <Badge key={idx} variant="secondary" className="text-xs">
-                              {skill}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 className="font-semibold mb-3 text-slate-700 dark:text-slate-300 text-lg">Key Achievements:</h4>
-                        <ul className="space-y-2">
-                          {teamMembers[activeTeamMember].achievements.map((achievement, idx) => (
-                            <li key={idx} className="flex items-start">
-                              <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                              <span className="text-slate-600 dark:text-slate-400">{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="flex space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                        <Button size="sm" variant="outline" asChild>
-                          <Link href={`mailto:${teamMembers[activeTeamMember].email}`}>
-                            <Mail className="w-4 h-4 mr-2" />
-                            Email
-                          </Link>
-                        </Button>
-                        <Button size="sm" variant="outline" asChild>
-                          <Link href={`tel:${teamMembers[activeTeamMember].phone}`}>
-                            <Phone className="w-4 h-4 mr-2" />
-                            Call
-                          </Link>
-                        </Button>
-                      </div>
-                    </div>
+                  </div>
+                  <ul className="space-y-4 mb-8 flex-1">
+                    {pkg.features.map((feature, i) => (
+                      <li key={i} className="flex items-start text-sm text-slate-600 dark:text-slate-400">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="pt-6 border-t border-slate-100 dark:border-slate-800">
+                    <div className="text-sm font-semibold text-slate-900 dark:text-white mb-2">Timeline:</div>
+                    <div className="text-blue-600 dark:text-blue-400">{pkg.timeline}</div>
                   </div>
                 </CardContent>
               </Card>
-            </div>
+            ))}
           </div>
+
+          {/* Terms & Exclusions */}
+          <div className={`grid md:grid-cols-3 gap-8 transition-all duration-1000 ${isVisible ? 'animate-fade-up animation-delay-600' : 'opacity-0'}`}>
+            <Card className="bg-blue-50 dark:bg-blue-900/20 border-0">
+              <CardContent className="p-6">
+                <h4 className="font-bold text-lg mb-4 text-slate-900 dark:text-white flex items-center">
+                  <CreditCard className="w-5 h-5 mr-2 text-blue-600" />
+                  Payment Terms
+                </h4>
+                <ul className="space-y-2">
+                  {[
+                    '50% advance before project start',
+                    '50% after final approval'
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start text-slate-700 dark:text-slate-300 text-sm">
+                      <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2 mt-2"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-red-50 dark:bg-red-900/20 border-0">
+              <CardContent className="p-6">
+                <h4 className="font-bold text-lg mb-4 text-slate-900 dark:text-white flex items-center">
+                  <Info className="w-5 h-5 mr-2 text-red-600" />
+                  Exclusions
+                </h4>
+                <ul className="space-y-2">
+                  {[
+                    'Domain & hosting charges',
+                    'Paid plugins or third-party tools',
+                    'Content writing',
+                    'Backend systems / admin panel'
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start text-slate-700 dark:text-slate-300 text-sm">
+                      <XCircle className="w-4 h-4 text-red-500 mr-2 mt-0.5" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-green-50 dark:bg-green-900/20 border-0">
+              <CardContent className="p-6">
+                <h4 className="font-bold text-lg mb-4 text-slate-900 dark:text-white flex items-center">
+                  <Shield className="w-5 h-5 mr-2 text-green-600" />
+                  Post-Delivery Support
+                </h4>
+                <div className="flex items-start text-slate-700 dark:text-slate-300 text-sm">
+                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5" />
+                  7 days free bug-fix support after delivery
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
         </div>
       </section>
 
@@ -354,69 +349,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Company Timeline */}
-      <section className="py-24 bg-slate-50 dark:bg-slate-900/50">
-        <div className="container mx-auto px-4">
-          {/* Heading */}
-          <div
-            className={`text-center space-y-6 mb-16 transition-all duration-1000 ${isVisible ? 'animate-fade-up animation-delay-1000' : 'opacity-0'
-              }`}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold">Our Journey</h2>
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              From humble beginnings to industry recognition - here's our story of growth, innovation, and success.
-            </p>
-          </div>
 
-          <div className="relative max-w-5xl mx-auto">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full hidden md:block"></div>
-
-            {milestones.map((milestone, index) => {
-              const IconComponent = milestone.icon
-              const isEven = index % 2 === 0
-              return (
-                <div
-                  key={index}
-                  className={`relative flex flex-col md:flex-row items-center mb-16 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'
-                    } ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
-                  style={{ animationDelay: `${1.2 + index * 0.2}s` }}
-                >
-                  {/* Timeline Node */}
-                  <div className="absolute md:static left-1/2 md:left-auto transform -translate-x-1/2 md:translate-x-0 mb-6 md:mb-0">
-                    <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white z-10 shadow-2xl mx-auto md:mx-0">
-                      <IconComponent className="h-6 w-6 md:h-8 md:w-8" />
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div
-                    className={`w-full md:w-5/12 ${isEven ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'
-                      }`}
-                  >
-                    <Card className="p-6 md:p-8 hover-lift bg-white dark:bg-slate-800 border-0 shadow-lg hover:shadow-xl">
-                      <CardContent className="p-0">
-                        <Badge className="mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white">
-                          {milestone.year}
-                        </Badge>
-                        <h4 className="text-xl md:text-2xl font-bold mb-3 text-slate-900 dark:text-white">
-                          {milestone.title}
-                        </h4>
-                        <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-                          {milestone.description}
-                        </p>
-                        <div className="text-sm md:text-base text-blue-600 dark:text-blue-400 font-semibold">
-                          {milestone.stats}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
 
 
       {/* CTA Section */}
