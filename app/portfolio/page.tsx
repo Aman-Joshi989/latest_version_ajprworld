@@ -143,7 +143,7 @@ export default function PortfolioPage() {
             We constantly experiment with new technologies. Checkout our labs for experimental AI models and open-source contributions.
           </p>
           <Button variant="outline" className="border-slate-300 text-slate-700 hover:bg-white hover:text-slate-900" asChild>
-            <Link href="https://github.com/pankajsammal">View GitHub Profile</Link>
+            <Link href="https://github.com/Aman-Joshi989">View GitHub Profile</Link>
           </Button>
         </div>
       </section>
