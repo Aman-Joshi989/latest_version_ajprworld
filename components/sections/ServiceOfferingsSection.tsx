@@ -14,13 +14,7 @@ const services = [
         features: ['UI/UX Design', 'Brand Strategy', 'User Research', 'Prototyping'],
         color: 'bg-purple-50 border-purple-200 dark:bg-purple-950/20 dark:border-purple-800'
     },
-    {
-        icon: Code2,
-        title: 'Product Engineering',
-        description: 'Build scalable, robust applications using cutting-edge technologies and best practices.',
-        features: ['Web Development', 'Mobile Apps', 'API Development', 'Quality Assurance'],
-        color: 'bg-blue-50 border-blue-200 dark:bg-blue-950/20 dark:border-blue-800'
-    },
+
     {
         icon: Cloud,
         title: 'Cloud & Infrastructure',

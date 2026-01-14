@@ -13,7 +13,7 @@ import {
 const allServices = [
     "Web Development",
     "GST Returns",
-    "Mobile Apps",
+
     "Legal Documentation",
     "Digital Solutions",
     "Company Registration",

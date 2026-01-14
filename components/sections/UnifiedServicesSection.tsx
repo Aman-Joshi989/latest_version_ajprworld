@@ -18,7 +18,7 @@ const allServiceCategories = {
         gradient: 'from-blue-500 to-cyan-500',
         services: [
             'Custom Web Development (Next.js, React)',
-            'Mobile App Development (React Native, Flutter)',
+
             'UI/UX Design & Prototyping',
             'Cloud Solutions & DevOps',
             'Database Design & Management',
@@ -27,102 +27,6 @@ const allServiceCategories = {
             'Digital Marketing Solutions',
             'SEO & Performance Optimization',
             'Cybersecurity Implementation'
-        ]
-    },
-    'Legal & Court Services': {
-        icon: Scale,
-        gradient: 'from-purple-500 to-pink-500',
-        services: [
-            'Criminal, Civil & Labour Court Cases',
-            'SARFAESI & NPA Act Expertise',
-            'Contract & Agreement Drafting',
-            'Legal Documentation & Affidavits',
-            'Power of Attorney (GPA)',
-            'Sale Deed & Transfer Deed',
-            'Marriage Certificate Assistance',
-            'Court Representation & Litigation',
-            'Legal Consultation & Advice',
-            'Notary Services'
-        ]
-    },
-    'Tax & Financial Services': {
-        icon: Calculator,
-        gradient: 'from-green-500 to-emerald-500',
-        services: [
-            'GST Returns (GSTR-1, 2B, 3B)',
-            'Income Tax Returns (ITR)',
-            'TDS & TCS Returns',
-            'Form 15CA Processing',
-            'Day-to-Day Accounting',
-            'Inventory Management',
-            'Financial Consultation',
-            'Tax Planning & Compliance',
-            'CIBIL Score Improvement',
-            'Bank Loan Assistance'
-        ]
-    },
-    // 'HR & Payroll Management': {
-    //     icon: Users,
-    //     gradient: 'from-orange-500 to-red-500',
-    //     services: [
-    //         'Complete Payroll Processing',
-    //         'ESI & PF Registration',
-    //         'Monthly ESI & PF Returns (ECR)',
-    //         'HR Compliance Management',
-    //         'Employee Documentation',
-    //         'Appointment Letter Drafting',
-    //         'Attendance Management Systems',
-    //         'Performance Management Tools',
-    //         'Training & Development Programs',
-    //         'Exit Formalities & Clearance'
-    //     ]
-    // },
-    'Business Registration': {
-        icon: Briefcase,
-        gradient: 'from-indigo-500 to-purple-500',
-        services: [
-            'Company Registration (Startup)',
-            'GST Registration',
-            'TAN & PAN Registration',
-            'Udyam/MSME Registration',
-            'Import/Export Code (IEC)',
-            'Trademark Registration',
-            'MCA Compliances & ROC Filings',
-            'Digital Signature Certificate (DSC)',
-            'GeM Portal Registration',
-            'Professional Tax Registration'
-        ]
-    },
-    'Documentation Services': {
-        icon: FileText,
-        gradient: 'from-teal-500 to-green-500',
-        services: [
-            'Company Profile Creation',
-            'MOA & AOA Drafting',
-            'Director Identification (DIN)',
-            'Rent Agreements & NOCs',
-            'Stamp Duty Documentation',
-            'Property Documentation',
-            'Passport & Driving License Assistance',
-            'Identity Card Services',
-            'Income Certificate Processing',
-            'Online Verification Services'
-        ]
-    },
-    'Specialized Services': {
-        icon: Shield,
-        gradient: 'from-rose-500 to-pink-500',
-        services: [
-            'BCAS Aviation Security Compliance',
-            'Airport AEP & E-Sahaj Services',
-            'Vehicle Challan & RC Services',
-            'Family ID Card Processing',
-            'Property Tax & Development Fees',
-            'Police Verification Services',
-            'Tehsil Office Work',
-            'Mutation & Registry Services',
-            'Dakhil Kharj Processing',
-            'All Government Liaison Work'
         ]
     }
 }

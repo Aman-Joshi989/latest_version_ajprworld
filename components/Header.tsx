@@ -15,8 +15,8 @@ import {
     AccordionTrigger,
 } from '@/components/ui/accordion'
 import {
-    Menu, ChevronDown, Code2, Scale, Calculator,
-    Phone, Building
+    Menu, ChevronDown, Code2, Smartphone, Cloud,
+    Phone
 } from 'lucide-react'
 import { ModeToggle } from '@/components/mode-toggle'
 
@@ -27,9 +27,7 @@ const navigation = [
         href: '/services',
         dropdown: [
             { name: 'Web Development', href: '/services/web-development', icon: Code2 },
-            { name: 'Legal Services', href: '/services/legal', icon: Scale },
-            { name: 'Financial Services', href: '/services/financial', icon: Calculator },
-            { name: 'Business Registration', href: '/services/business', icon: Building },
+            { name: 'Cloud Solutions', href: '/services/cloud', icon: Cloud },
             { name: 'Digital Marketing', href: '/services/digital-marketing', icon: Phone },
         ]
     },
@@ -78,17 +76,17 @@ export default function Header() {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden lg:flex items-center space-x-8">
+                <nav className="hidden lg:flex items-center space-x-8 h-full">
                     {navigation.map((item) => (
                         <div
                             key={item.name}
-                            className="relative group"
+                            className="relative group h-full flex items-center"
                             onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
                             onMouseLeave={() => setActiveDropdown(null)}
                         >
                             <Link
                                 href={item.href}
-                                className={`flex items-center font-medium py-2 transition-colors ${isActive(item.href)
+                                className={`flex items-center font-medium transition-colors ${isActive(item.href)
                                     ? 'text-blue-600 dark:text-blue-400'
                                     : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                                     }`}
@@ -98,23 +96,25 @@ export default function Header() {
                             </Link>
 
                             {item.dropdown && activeDropdown === item.name && (
-                                <div className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-800 py-2 animate-fade-down">
-                                    {item.dropdown.map((subItem) => {
-                                        const IconComponent = subItem.icon
-                                        return (
-                                            <Link
-                                                key={subItem.name}
-                                                href={subItem.href}
-                                                className={`flex items-center px-4 py-3 transition-colors ${isActive(subItem.href)
-                                                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/20'
-                                                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/20'
-                                                    }`}
-                                            >
-                                                <IconComponent className="w-5 h-5 mr-3 text-blue-600" />
-                                                <div className="font-medium">{subItem.name}</div>
-                                            </Link>
-                                        )
-                                    })}
+                                <div className="absolute top-full left-0 pt-2 w-64 animate-fade-down">
+                                    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-800 py-2">
+                                        {item.dropdown.map((subItem) => {
+                                            const IconComponent = subItem.icon
+                                            return (
+                                                <Link
+                                                    key={subItem.name}
+                                                    href={subItem.href}
+                                                    className={`flex items-center px-4 py-3 transition-colors ${isActive(subItem.href)
+                                                        ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/20'
+                                                        : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/20'
+                                                        }`}
+                                                >
+                                                    <IconComponent className="w-5 h-5 mr-3 text-blue-600" />
+                                                    <div className="font-medium">{subItem.name}</div>
+                                                </Link>
+                                            )
+                                        })}
+                                    </div>
                                 </div>
                             )}
                         </div>

@@ -12,10 +12,9 @@ import { Badge } from '@/components/ui/badge';
 
 const services = [
     { name: 'Web Development', href: '/services/web-development' },
-    { name: 'Legal Services', href: '/services/legal' },
-    { name: 'GST & Tax Returns', href: '/services/financial' },
-    { name: 'Company Registration', href: '/services/business' },
+
     { name: 'Digital Marketing', href: '/services/digital-marketing' },
+    { name: 'Cloud Solutions', href: '/services/cloud' },
 ];
 
 const quickLinks = [
@@ -77,7 +76,7 @@ export default function Footer() {
                         </div>
                         <p className="text-blue-100 leading-relaxed">
                             Your trusted partner for comprehensive business solutions. From cutting-edge technology
-                            to legal expertise, we deliver excellence in every service.
+                            to digital strategy, we deliver excellence in every service.
                         </p>
                         <div className="space-y-3">
                             <div className="flex items-center text-blue-200">

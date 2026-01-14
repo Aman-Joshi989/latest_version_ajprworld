@@ -360,8 +360,8 @@ export default function AboutPage() {
               Ready to Join Our Success Story?
             </h2>
             <p className="text-xl text-blue-100 mb-10 leading-relaxed">
-              Whether you're looking for cutting-edge technology solutions, expert legal guidance,
-              or comprehensive business support, our team is ready to help you achieve your goals.
+              Whether you're looking for cutting-edge technology solutions or expert digital transformation,
+              our team is ready to help you achieve your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button size="lg" variant="secondary" className="hover-lift px-12 py-4 text-lg" asChild>
